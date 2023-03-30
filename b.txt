@@ -1,0 +1,17 @@
+#![feature(prelude_import)]
+#[prelude_import]
+use std::prelude::rust_2021::*;
+#[macro_use]
+extern crate std;
+pub struct Main {
+    owner: String,
+}
+impl Main {
+    pub fn change_owner(&mut self, new_owner: String) -> () {
+        self.owner = new_owner;
+    }
+}
+fn main() {
+    let mut m_test = Main { owner: String::from("Joe") };
+    m_test.change_owner(String::from("Alice"));
+}
